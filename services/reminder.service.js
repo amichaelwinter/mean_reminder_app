@@ -8,6 +8,7 @@ _this = this
 // Async function to get the To do List
 exports.getReminders = async function(query, page, limit){
 
+  console.log("Getting reminders");
     // Options setup for the mongoose paginate
     var options = {
         page,
