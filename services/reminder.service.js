@@ -9,6 +9,7 @@ _this = this
 exports.getReminders = async function(query, page, limit){
 
   console.log("Getting reminders");
+
     // Options setup for the mongoose paginate
     var options = {
         page,
@@ -98,7 +99,9 @@ exports.deleteReminder = async function(id){
     // Delete the Todo
     try{
         var deleted = await Reminder.remove({_id: id})
-        if(deleted.result.n === 0){
+        console.log(deleted);
+
+        if(deleted.n === 0){
             throw Error("Reminder Could not be deleted")
         }
         return deleted
