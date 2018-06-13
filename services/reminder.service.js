@@ -40,6 +40,7 @@ exports.createReminder = async function(reminder){
         title: reminder.title,
         description: reminder.description,
         date: new Date(),
+        endDate: reminder.endDate,
         status: reminder.status
     })
 
@@ -77,9 +78,10 @@ exports.updateReminder = async function(reminder){
     console.log(oldReminder)
 
     //Edit the Todo Object
-    oldReminder.title = reminder.title
-    oldReminder.description = reminder.description
-    oldReminder.status = reminder.status
+    oldReminder.title = reminder.title;
+    oldReminder.description = reminder.description;
+    oldReminder.status = reminder.status;
+    oldReminder.endDate = reminder.endDate;
 
     console.log(oldReminder)
 

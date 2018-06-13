@@ -6,6 +6,7 @@ var ReminderSchema = new mongoose.Schema({
     title: String,
     description: String,
     date: Date,
+    endDate:Date,
     status: String
 })
 

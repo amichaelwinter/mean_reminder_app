@@ -41,10 +41,12 @@ exports.createReminder = async function(req, res, next){
     // Req.Body contains the form submit values.
 
     console.log("Creating a reminder\n %s", req.body.title);
+    console.log(req.body);
 
     var reminder = {
         title: req.body.title,
         description: req.body.description,
+        endDate: req.body.endDate,
         status: req.body.status
     }
 
@@ -79,6 +81,7 @@ exports.updateReminder = async function(req, res, next){
         id,
         title: req.body.title ? req.body.title : null,
         description: req.body.description ? req.body.description : null,
+        endDate: req.body.endDate ? req.body.endDate : null,
         status: req.body.status ? req.body.status : null
     }
 
